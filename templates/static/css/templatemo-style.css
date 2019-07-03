@@ -253,6 +253,10 @@ fyi - Some documentation indiacates !important will cause other issues. */
     }
 /* end mapH */
 
+
+	
+
+
 /* start mapG */       
 #mapG
     {
@@ -274,6 +278,25 @@ fyi - Some documentation indiacates !important will cause other issues. */
         display: inline-block;
         margin-top: 30px;
     }
+
+.axis path .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    }
+        
+    .bar {
+    fill: rgb(186, 114, 195);
+    }
+        
+    .bar:hover {
+    fill: rgb(6, 160, 160) ;
+    }
+        
+    .x.axis path {
+    display: none;
+    }
+
 /* end mapG */
 
 /* start divider */

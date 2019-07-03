@@ -41,12 +41,12 @@ var layers = {
     
   var overlayMaps = {
     "Restaurants": restos,
-      "Bronx": layers.BRONX,
-      "Manhattan": layers.MANHATTAN,
-      "Brooklyn": layers.BROOKLYN,
-      "Staten Island": layers.STATEN_ISLAND,
-      "Queens": layers.QUEENS,
-      "Missing" : layers.Missing
+      // "Bronx": layers.BRONX,
+      // "Manhattan": layers.MANHATTAN,
+      // "Brooklyn": layers.BROOKLYN,
+      // "Staten Island": layers.STATEN_ISLAND,
+      // "Queens": layers.QUEENS,
+      // "Missing" : layers.Missing
   };
     
 
@@ -58,12 +58,12 @@ var layers = {
 //    layers: [lightmap, restos]
                      layers: [lightmap,
                               restos,
-                              layers.BRONX,
-                              layers.MANHATTAN,
-                              layers.BROOKLYN,
-                              layers.STATEN_ISLAND,
-                              layers.QUEENS,
-                              layers.Missing
+                              // layers.BRONX,
+                              // layers.MANHATTAN,
+                              // layers.BROOKLYN,
+                              // layers.STATEN_ISLAND,
+                              // layers.QUEENS,
+                              // layers.Missing
                               ]
   });
 
