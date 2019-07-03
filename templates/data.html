@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<!-- 
-    	Boxer Template
-    	http://www.templatemo.com/tm-446-boxer
-    	-->
-		<meta charset="utf-8">
+<head>
+        <meta charset="utf-8">
 		<title>NY Restaurant Health Ratings</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-
+		
 		<!--BEGIN styles needed for the Boxer bootstrap template-->
 		<!-- animate css -->
 		<link rel="stylesheet" href="static/css/animate.min.css">
 		<!-- bootstrap css -->
-
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="static/css/font-awesome.min.css">
@@ -27,96 +22,97 @@
 		<!--BEGIN styles needed for leaflet-->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 		<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
-		<!-- <script src="https://d3js.org/d3.v4.min.js"></script>  -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+        <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
 		<!--END styles needed for leaflet-->
-		
-		<!-- Updated D3 version  -->
-		<script src="https://d3js.org/d3.v5.min.js"></script>
-
-		
 
 		<!-- custom css -->
-		<link rel="stylesheet" href="static/css/templatemo-style.css">
-
-		<!-- Frappe Ingredients-->
-		<link rel="stylesheet" href="https://unpkg.com/frappe-datatable@0.0.5/dist/frappe-datatable.min.css">
-		<script src="https://unpkg.com/sortablejs@1.7.0/Sortable.min.js"></script>
-		<script src="https://unpkg.com/clusterize.js@0.18.0/clusterize.min.js"></script>
-		<!-- include the lib -->
-		<script src="https://unpkg.com/frappe-datatable@0.0.5/dist/frappe-datatable.min.js"></script>
-
-
-	</head>
-	<body>
+        <link rel="stylesheet" href="static/css/templatemo-style.css">
+        
+</head>
+<body>
 		<!-- start preloader -->
-		<div class="preloader">
-			<div class="sk-spinner sk-spinner-rotating-plane"></div>
-    	 </div>
-		<!-- end preloader -->
-		<!-- Start of navbar -->
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container-fluid navbar-custom">
-	  
-			  <!-- Per Jing, grouping for better mobile display -->
-			  <div class="row">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				  <a href="index.html" class="navbar-brand">NYC Restaurant Sanitation Scores</a>
-				</div>
+		<!-- <div class="preloader">
+                <div class="sk-spinner sk-spinner-rotating-plane"></div>
+             </div> -->
+            <!-- end preloader -->
+    
+            <!-- Start of navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container-fluid navbar-custom">
+              
+                      <!-- Per Jing, grouping for better mobile display -->
+                      <div class="row">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a href="index.html" class="navbar-brand">NYC Restaurant Sanitation Scores</a>
+                        </div>
+    
+                    <!--   LG Note:    Category changes to the original
+                        home ->  Maps
+                        pricing ->   Data
+                        download ->  Overview
+                        contact ->   About
+    
+                    -->
+    
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right text-uppercase">
+                            <li class="dropdown" >
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maps <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.html#mapM">Restaurants</a></li>
+                                    <li><a href="index.html#mapH">Citations</a></li>
+                                    <li><a href="index.html#mapG">Severity</a></li>
+                                </ul>
+                            </li>
+                            <!-- <li><a href="#feature">Features</a></li> -->
+                            <!--   Removed features from the menu, but mainted the section within the page-->
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li class="navbar-last"><a href="data.html">Data</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navigation -->
 
-				<!--   LG Note:    Category changes to the original
-					home ->  Maps
-					pricing ->   Data
-					download ->  Overview
-					contact ->   About
-
-				-->
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right text-uppercase">
-						<li class="dropdown" >
-							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maps <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="index.html#mapM">Map1-Markers</a></li>
-								 <li><a href="#index.html#mapH">Map2-Heat</a></li>
-								 <li ><a href="#index.html#mapG">Graph</a></li>
-							</ul>
-						</li>
-						<!-- <li><a href="#feature">Features</a></li> -->
-						<!--   Removed features from the menu, but mainted the section within the page-->
-						<li><a href="#overview">Overview</a></li>
-						<li><a href="#about">About</a></li>
-						<li class="navbar-last"><a href="data.html">Data</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- end navigation -->
-		
-				<!-- start Frappe -->
-		<section id="tabledisplay">
-			<div class="overlay">
-					<div class="container"> <!--may need to add container-fluid for responsive to display the map height-->
-						<div class="row">
-							<div class="col-md-1">
-							</div>
-								<div class="col-md-10 wow fadeInRight" id="datatable" style="height:400px;" data-wow-delay="0.6s">
-								</div>
-							<div class="col-md-1">
-							</div>
-						</div>
+<!-- row for JSON link -->
+<section id="link">
+		<div class="overlay">
+				<div class="container"> <!--may need to add container-fluid for responsive to display the map height-->
+					 <div class="row">
+                               <p>
+                                    <a href="http://127.0.0.1:5000/tabularData">Click here for JSON format.</a>
+                               </p>
+								<!-- <img src="static/images/exampleBar.png" class="img-responsive" alt="Graph Example"> -->
 					</div>
-			</div>
-		</section>
-		<!-- end Frappe -->
-		
-		<!-- start footer -->
-		<footer>
+				</div>
+		</div>
+	</section>
+
+
+<!-- start datatable -->
+<section id="dataTable">
+    <div class="overlay"></div>
+        <div class="container"></div>
+            <div class="row"></div>
+                <div id="datatable" style="height:800px;"></div> <!-- width:600px  -->
+                    <!-- Frappe Ingredients-->
+                    <link href="https://unpkg.com/frappe-datatable@0.0.5/dist/frappe-datatable.min.css" rel="stylesheet">
+                    <script src="https://unpkg.com/sortablejs@1.7.0/Sortable.min.js"></script>
+                    <script src="https://unpkg.com/clusterize.js@0.18.0/clusterize.min.js"></script>
+                    <!-- include the lib -->
+                    <script src="https://unpkg.com/frappe-datatable@0.0.5/dist/frappe-datatable.min.js"></script>
+</section>
+
+<!-- start footer -->
+    <footer>
 			<div class="container">
 				<div class="row">
 					<p>Copyright © 2019 Bootcamp Project #2</p>
@@ -124,35 +120,10 @@
 			</div>
 		</footer>
 		<!-- end footer -->
-        
-		<!-- jQuery CDN -->
-		<!-- This URL for the jquery script is from the HTML homework.  Using this file and NOT the jquery.js which came with the bootstrap template
-		WHY??    2.1.4 was used with HTML Homework and v1.10.2 was included with bootstrap template -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
+    <!--  BEGIN Scripts used by Frappe-->
+    <script type="text/javascript" src="static/js/frappetable.js"></script>
+    <!-- END Scripts used by Frappe-->
 
-		<!--This script came with the bootstap template and is v1.10.2-->
-		<!-- <script src="js/jquery.js"></script>  -->
-		<script src="static/js/jquery.singlePageNav.min.js"></script>
-
-
-		<!--   bootstrap should be loaded AFTER jquery, else there is an error-->
-		<!--https://stackoverflow.com/questions/9529574/bootstrap-dropdown-menu-not-working-->
-
-		
-		<!-- Bootstrap CDN -->
-		<!-- <script src="js/bootstrap.min.js"></script> -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-		<script src="static/js/wow.min.js"></script>
-		
-		<script src="static/js/custom.js"></script>
-
-
-		<!--  BEGIN Scripts used by Frappe-->
-		<script type="text/javascript" src="static/js/frappetable.js"></script>
-		<!-- END Scripts used by Frappe-->
-		
-	  
-	</body>
+</body>
 </html>
